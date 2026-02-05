@@ -134,7 +134,7 @@
 
   <main class="card">
     <!-- ANIMAL WITH HEART -->
-    <svg class="art" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
+    <svg id="animal-heart-svg" class="art" viewBox="0 0 320 240" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <linearGradient id="fur" x1="0" x2="1">
           <stop offset="0" stop-color="#f7c7a1"/>
@@ -171,7 +171,7 @@
             fill="#ff7aa2"/>
     </svg>
 
-    <h1>Anita, will you be my valentine?</h1>
+    <h1 id="question">Anita, will you be my valentine?</h1>
 
     <section class="button-zone" id="zone">
       <button id="yesBtn">Yes</button>
@@ -183,6 +183,7 @@
 
     <section class="result" id="result">
       <h2>YAY! 🎉</h2>
+      <p style="font-size: 1.2rem;">Thank you for making everyday feel like Valentine's Day &#129655</p> 
       <img
         class="celebration-image"
         src="./fluffy_cow_valentines_day.png"
@@ -196,6 +197,8 @@
     const yesBtn = document.getElementById("yesBtn");
     const noBtn = document.getElementById("noBtn");
     const result = document.getElementById("result");
+    const question = document.getElementById("question");
+    const animalHeartSvg = document.getElementById("animal-heart-svg");
     const hint = document.getElementById("hint");
 
     /* ---------- CONFETTI ---------- */
@@ -294,6 +297,8 @@
       zone.style.display = "none";
       hint.style.display = "none";     // HIDE THE HINT
       result.style.display = "block";
+      question.style.display = "none";
+      animalHeartSvg.style.display = "none";
       resizeConfettiCanvas();
       fullScreenConfetti();
     });
